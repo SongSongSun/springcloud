@@ -23,6 +23,10 @@ eureka:
     instance-id: payment8001
     ##访问地址可以显示ip地址
     prefer-ip-address: true
+    ## Eureka客户端向服务端发送心跳的时间间隔,默认30秒
+    lease-renewal-interval-in-seconds: 1
+    ## Eureka服务端在收到最后一次心跳的等待时间的上限,默认90秒  超时则剔除
+    lease-expiration-duration-in-seconds: 5
 
 
 mybatis:
