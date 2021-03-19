@@ -18,7 +18,7 @@ eureka:
     #是否从EurekaServer抓取已有的注册信息，默认为true
     fetchRegistry: true
     service-url:
-      defaultZone: http://192.169.1.165:7001/eureka,http://192.168.1.165:7002/eureka
+      defaultZone: http://192.169.1.135:7001/eureka,http://192.168.1.135:7002/eureka
 
 
 

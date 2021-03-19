@@ -22,19 +22,20 @@ public class OrderController {
     @Resource
     private RestTemplate restTemplate;
 
-    public static final String PAYMENT_URL="http://localhost:8001";
+    //public static final String PAYMENT_URL="http://localhost:8001";
+
+    public static final String PAYMENT_URL = "http://CLOUD-PAYMENT-SERVICE";
 
     @GetMapping("/consumer/payment/create")
-    public CommonResult<Payment> create(Payment payment){
-        log.info("payment:{}",payment);
-        return restTemplate.postForObject(PAYMENT_URL+"/payment/create",payment,CommonResult.class);
+    public CommonResult<Payment> create(Payment payment) {
+        log.info("payment:{}", payment);
+        return restTemplate.postForObject(PAYMENT_URL + "/payment/create", payment, CommonResult.class);
     }
 
 
-
     @GetMapping("/consumer/payment/get/{id}")
-    public CommonResult<Payment> getPayment(@PathVariable("id") long id){
-        return restTemplate.getForObject(PAYMENT_URL+"/payment/get/"+id,CommonResult.class);
+    public CommonResult<Payment> getPayment(@PathVariable("id") long id) {
+        return restTemplate.getForObject(PAYMENT_URL + "/payment/get/" + id, CommonResult.class);
     }
 
 }
