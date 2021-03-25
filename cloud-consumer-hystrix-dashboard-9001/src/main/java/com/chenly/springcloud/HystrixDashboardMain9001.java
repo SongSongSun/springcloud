@@ -4,24 +4,21 @@ import com.netflix.hystrix.contrib.metrics.eventstream.HystrixMetricsStreamServl
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
-import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
 import org.springframework.context.annotation.Bean;
 
 /**
  * @Author Song
- * @Date 2021/3/24 11:04
+ * @Date 2021/3/25 16:37
  * @Version 1.0
  * @Description
  */
 @SpringBootApplication
-@EnableEurekaClient
-@EnableCircuitBreaker
-public class PaymentHystrixMain8001 {
+@EnableHystrixDashboard
+public class HystrixDashboardMain9001 {
     public static void main(String[] args) {
-        SpringApplication.run(PaymentHystrixMain8001.class, args);
+        SpringApplication.run(HystrixDashboardMain9001.class, args);
     }
-
     /**
      * 此配置是为了服务监控而配置，与服务容错本身无观，springCloud 升级之后的坑
      * ServletRegistrationBean因为springboot的默认路径不是/hystrix.stream
