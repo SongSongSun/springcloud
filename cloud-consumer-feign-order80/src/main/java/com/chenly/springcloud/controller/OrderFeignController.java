@@ -2,11 +2,10 @@ package com.chenly.springcloud.controller;
 
 import com.chenly.springcloud.entities.CommonResult;
 import com.chenly.springcloud.entities.Payment;
+import com.chenly.springcloud.entities.Person;
 import com.chenly.springcloud.service.PaymentFeignService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -28,9 +27,14 @@ public class OrderFeignController {
     }
 
     @GetMapping(value = "/consumer/payment/feign/timeout")
-    public String paymentFeignTimeout(){
+    public String paymentFeignTimeout() {
 
         return paymentFeignService.paymentFeignTimeout();
+    }
+
+    @PostMapping(value = "/consumer/payment/feign/post")
+    public String paymentFeignPost(@RequestBody Person person) {
+        return paymentFeignService.paymentPostFeign(person);
     }
 }
 

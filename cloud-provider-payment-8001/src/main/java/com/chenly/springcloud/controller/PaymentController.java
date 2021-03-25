@@ -2,6 +2,7 @@ package com.chenly.springcloud.controller;
 
 import com.chenly.springcloud.entities.CommonResult;
 import com.chenly.springcloud.entities.Payment;
+import com.chenly.springcloud.entities.Person;
 import com.chenly.springcloud.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -72,13 +73,19 @@ public class PaymentController {
     }
 
     @GetMapping(value = "/payment/feign/timeout")
-    public String paymentFeignTimeout(){
+    public String paymentFeignTimeout() {
         try {
             TimeUnit.SECONDS.sleep(3);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         return serverPort;
+    }
+
+    @PostMapping(value = "/payment/feign/post")
+    public String paymentPostFeign(@RequestBody Person person) {
+        log.info("my name is {},and i am {} years old", person.getName(), person.getAge());
+        return "my name is " + person.getName() + ",and i am " + person.getAge() + " years old ,serverPort:" + serverPort;
     }
 
 }
