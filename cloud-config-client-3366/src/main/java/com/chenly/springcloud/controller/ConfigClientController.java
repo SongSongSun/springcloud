@@ -7,13 +7,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @Author Song
- * @Date 2021/3/30 17:53
+ * @Date 2021/3/31 15:30
  * @Version 1.0
  * @Description
  */
 @RestController
 @RefreshScope
-public class ConfigController {
+public class ConfigClientController {
     @Value("${server.port}")
     private String serverPort;
 
