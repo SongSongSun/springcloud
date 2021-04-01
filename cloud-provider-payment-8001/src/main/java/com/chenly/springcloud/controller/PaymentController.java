@@ -88,4 +88,9 @@ public class PaymentController {
         return "my name is " + person.getName() + ",and i am " + person.getAge() + " years old ,serverPort:" + serverPort;
     }
 
+    @GetMapping("/payment/zipkin")
+    public String paymentZipkin() {
+        return "hi ,i'am paymentzipkin server fall back，welcome to atguigu，O(∩_∩)O哈哈~";
+    }
+
 }
