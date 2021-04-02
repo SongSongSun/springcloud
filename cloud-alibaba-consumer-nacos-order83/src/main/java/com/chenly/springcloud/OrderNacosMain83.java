@@ -1,19 +1,19 @@
-package springcloud;
+package com.chenly.springcloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  * @Author Song
- * @Date 2021/4/1 11:32
+ * @Date 2021/4/2 9:57
  * @Version 1.0
  * @Description
  */
 @SpringBootApplication
-@EnableEurekaClient
-public class StreamMqMain8803 {
+@EnableDiscoveryClient
+public class OrderNacosMain83 {
     public static void main(String[] args) {
-        SpringApplication.run(StreamMqMain8803.class, args);
+        SpringApplication.run(OrderNacosMain83.class, args);
     }
 }
